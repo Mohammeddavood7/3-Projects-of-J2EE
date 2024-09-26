@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="installnewtrack.css">
+</head>
+<body>
+  <header>
+    <h1>MOST CONVENIENT AND RELIABLE TRANSPORT SERVICES</h1>
+  </header>
+
+  <nav>
+    <a href="homepage.html">HOME</a> 
+    <a href="recentlyinstalledtruck.jsp">RECENTLY INSTALLED TRUCKS</a>
+    <a href="status.jsp">STATUS</a>
+    <a href="towardshere.jsp">TOWARDS HERE</a>
+    <a href="service.jsp">SERVICES</a>
+    <a href="contact.html">CONTACT US</a>
+  </nav>
+
+  <div class="container">
+    <h2>WELCOME TO OUR TRUCK TRACKING COMPANY</h2>
+    <p>Click here for details</p>
+
+    <form action="addtruck" method="post">
+      <div class="form-group">
+        <label for="truckModel">Truck Model:</label>
+        <input type="text" id="truckModel" class="form-input" name="truckModel" required>
+      </div>
+
+      <div class="form-group">
+        <label for="truckNo">Truck No:</label>
+        <input type="text" id="truckNo" class="form-input" name="truckNo" required>
+      </div>
+
+      <div class="form-group">
+        <label for="insurance">Insurance:</label>
+        <input type="radio" id="insurance" name="insurance" value="yes" class="form-checkbox">
+        <label for="insurance">Yes</label>
+        <input type="radio" id="insurance" name="insurance" value="no" class="form-checkbox">
+        <label for="insurance">NO</label>
+      </div>
+
+      <div class="form-group">
+        <label for="insuranceCompany">If Yes then Insurance Company Name:</label>
+        <input type="text" id="insuranceCompany" name="insuranceCompany" class="form-input" required>
+      </div>
+
+      <div class="form-group">
+        <label for="owner">Owner:</label>
+        <input type="text" id="owner" name="owner" class="form-input" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" class="form-input" required>
+      </div>
+
+      <div class="form-group">
+        <label for="mobile">Mobile:</label>
+        <input type="text" id="mobile" name="mobile" class="form-input" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="status">Status :- *Available/NA</label>
+        <input type="text" id="status" name="status" class="form-input" required>
+      </div>
+
+      <div class="form-group">
+        <label for="routeFrom">Route-From:</label>
+        <select id="routeFrom" name="routeFrom" class="form-select">
+          <option value="Select a Branch">Select a Branch</option>
+          <option value="HYDERABAD">Hyderabad</option>
+          <option value="KERALA">Kerala</option>
+          <option value="CHENNAI">Chennai</option>
+          <option value="BANGALORE">Bangalore</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="routeTo">To:</label>
+        <select id="routeTo" name="routeTo" class="form-select">
+          <option value="Select a Branch">Select a Branch</option>
+          <option value="HYDERABAD">Hyderabad</option>
+          <option value="KERALA">Kerala</option>
+          <option value="CHENNAI">Chennai</option>
+          <option value="BANGALORE">Bangalore</option>
+        </select>
+      </div>
+
+      <button type="submit" class="form-button">Create</button>
+      <a href="findtruck.html" style="text-decoration:none;">click here to search truck</a>
+    </form>
+    
+  </div>
+
+  <div class="image-container">
+    <img src="https://www.dreamstime.com/stock-photo-truck-delivery-services-concept-image-truck-trucking-concept-isolated-white-background-image161462250" class="image" alt="Truck delivery services concept image">
+  </div>
+
+  <footer>
+    <p>&copy; 2023 MOST CONVENIENT AND RELIABLE TRANSPORT SERVICES</p>
+  </footer>
+</body>
+</html>

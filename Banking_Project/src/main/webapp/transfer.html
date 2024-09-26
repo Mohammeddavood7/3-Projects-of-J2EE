@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APANA-BANK - ExtraOrdinary Service</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Styles for the navigation bar */
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .navbar ul {
+            list-style-type: none;
+        }
+        .navbar ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* Styles for the main content sections */
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .services, .balance-form {
+            width: 48%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        /* Styles for the services list */
+        .services ul {
+            list-style-type: none;
+        }
+        .services a {
+            color: #333;
+            text-decoration: none;
+        }
+        /* Styles for the balance form */
+        .balance-form input,
+        .balance-form button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .balance-form button {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+        /* Styles for the welcome message */
+        .welcome {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .h22{
+         width:50%px;
+           margin:auto;
+        }
+        span
+        {
+           color:red;
+        }
+        
+        
+        /* Additional styles can be added as needed */
+    </style>
+<!--         <script type="text/javascript" src="Validation.js" defer="defer"></script>
+ -->
+ </head>
+<body>
+    <header class="navbar">
+        <nav>
+            <ul>
+                    <li><a href="newaccount.html"><button>NEW ACCOUNT</button></a></li>
+                    <li><a href="balance.html"><button>BALANCE</button></a></li>
+                    <li><a href="deposit.html"><button>DEPOSIT</button></a></li>
+                    <li><a href="withdraw.html"><button>WITHDRAW</button></a></li>
+                    <li><a href="transfer.html"><button>TRANSFER</button></a></li>
+                    <li><a href="closeac.html"><button>CLOSE A/C</button></a></li>
+                    <li><a href="aboutus.html"><button>ABOUT US</button></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-content">
+        <div class="services">
+            <h2>Services</h2>
+            <ul>
+                <li><a href="www.javatpoint.com">www.javatpoint.com</a></li>
+                <li><a href="www.javatpointforum.jsp">www.javatpointforum.jsp</a></li>
+                <!-- More services can be added here -->
+            </ul>
+        </div>
+        <div class="balance-form">
+        <span id="accountnoError"></span>
+            <span id="unameError"></span>
+            <span id="pwordError"></span>
+            <span id="amountError"></span>
+            <span id="targetaccountnoError"></span>
+            <h2 class="h22">TRANSFER FORM</h2>
+            <form action="transfer" method="post" id="frm">
+        <table>
+            <tr>
+                <th>ACCOUNT NO: </th> <td><input type="text" name="accountno" id="accountno" required></td>
+            </tr>
+
+            <tr>
+                <th>USER NAME: </th> <td><input type="text" name="uname" id="uname" required></td>
+            </tr>
+
+             <tr>
+                <th>PASSWORD: </th> <td><input type="text" name="pword" id="pword" required></td>
+            </tr> 
+            <tr>
+                <th>TARGET ACCOUNT NO:</th> <td><input type="text" name="targetaccount" id="targetaccount"></td>
+            </tr>
+            
+            <tr>
+                <th>AMOUNT</th> <td><input type="text" name="amount" id="amount"></td>
+            </tr>
+
+            <tr>
+               <td></td> <td><input type="submit" value="submit">    <input type="reset" name="Clear"></td>
+            </tr>
+        </table>
+    </form>
+        </div>
+    </div>
+    <div class="welcome">
+        <h2>Welcome to APANA-BANK</h2>
+        <p>ExtraOrdinary Service</p>
+        <!-- Image of three individuals can be added here -->
+        <!-- Animated globe graphic can be added here -->
+    </div>
+    
+    <script type="text/javascript">
+
+        document.getElementById("frm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            validatingGetParameter();
+        });
+ 
+
+    function validatingGetParameter() {
+        let valid = true;
+        
+        // Account number validation
+        let account = document.getElementById("accountno");
+        const acv = /^\d+$/;
+        if (!acv.test(account.value) || account.value.trim() === "") {
+            document.getElementById("accountnoError").innerHTML = `<center><i>ACCOUNT NO SHOULD BE DIGITS</i></center>`;
+        } else {
+            document.getElementById("accountnoError").innerText = "";
+        }
+
+        // Target account number validation
+        let targetaccount = document.getElementById("targetaccount");
+        const targetaccountV = /^\d+$/;
+        if (!targetaccountV.test(targetaccount.value) || targetaccount.value.trim() === "") {
+            document.getElementById("targetaccountnoError").innerHTML = `<center><i>ACCOUNT NO SHOULD BE DIGITS</i></center>`;
+        } else {
+            document.getElementById("targetaccountnoError").innerText = "";
+        }
+
+        // Username validation
+        let uname = document.getElementById("uname");
+        const unameValid = /^[a-zA-Z ]+$/;
+        if (!unameValid.test(uname.value) || uname.value.trim() === "") {
+            document.getElementById("unameError").innerHTML = `<center><i>USERNAME MUST BE IN ALPHABETS</i></center>`;
+            valid = false;
+        } else {
+            document.getElementById("unameError").innerText = "";
+        }
+
+        // Password validation
+        let pword = document.getElementById("pword");
+        const password = /^\d{10}$/;
+        if (!password.test(pword.value) || pword.value.trim() === "") {
+            document.getElementById("pwordError").innerHTML = `<center><i>PASSWORD SHOULD BE 10 DIGITS NUMBER</i></center>`;
+        } else {
+            document.getElementById("pwordError").innerText = "";
+        }
+
+        
+
+       
+
+        // Amount validation
+        let amount1 = document.getElementById("amount");
+        let parsAmount = parseFloat(amount1.value);
+        const amountV = /^\d+$/;
+        if (!amountV.test(amount1.value) || parsAmount <= 0) {
+            document.getElementById("amountError").innerHTML = `<center><i>AMOUNT SHOULD BE A POSITIVE NUMBER</i></center>`;
+        } else {
+            document.getElementById("amountError").innerText = "";
+        }
+
+       
+
+           if (valid) {
+               document.getElementById("frm").submit();
+           }
+       }
+
+    
+    </script>
+</body>
+</html>

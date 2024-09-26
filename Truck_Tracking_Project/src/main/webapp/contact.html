@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truck Tracking Company</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+   .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px 8px 0 0;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: space-around;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    nav li a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    nav li a:hover {
+      color: #ddd;
+    }
+
+   .header {
+      padding: 20px;
+      text-align: center;
+    }
+
+    form {
+      display: inline-block;
+      width: 100%;
+      max-width: 500px;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #ffffff;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #1e3a8a;
+    }
+
+    input, textarea {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    input[type="submit"] {
+      background-color: #1e3a8a;
+      color: #ffffff;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #3366cc;
+    }
+
+   .image-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 150px);
+      grid-gap: 10px;
+      padding: 20px;
+    }
+
+   .image-grid img {
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
+
+      form {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>WELCOME TO OUR TRUCK TRACKING COMPANY</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header">
+      <h1 style='color:darkcyan;'>Contact To Company Owner</h1>
+    </div>
+    <form action="managercontact" method="post">
+     <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+      <label for="phone">Phone:</label><br>
+      <input type="tel" id="phone" name="phone" required><br><br>
+      <label for="message">Message:</label> <label> it accepts 300* letter only</label> <br>
+      <textarea id="message" name="message"></textarea><br><br>
+      <p id="errorcontact"></p>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <pre>
+  
+  
+  </pre>
+</body>
+</html>

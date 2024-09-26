@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <welcome-file-list>
+    <welcome-file>homepage.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>RecentlyInstalledTruckServlet</display-name>
+    <servlet-name>RecentlyInstalledTruckServlet</servlet-name>
+    <servlet-class>truck.RecentlyInstalledTruckServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RecentlyInstalledTruckServlet</servlet-name>
+    <url-pattern>/RecentlyInstalledTruckServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServiceServlet</display-name>
+    <servlet-name>ServiceServlet</servlet-name>
+    <servlet-class>truck.ServiceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServiceServlet</servlet-name>
+    <url-pattern>/ServiceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManagerContactServlet</display-name>
+    <servlet-name>ManagerContactServlet</servlet-name>
+    <servlet-class>managercontact.ManagerContactServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManagerContactServlet</servlet-name>
+    <url-pattern>/ManagerContactServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StatusServlet</display-name>
+    <servlet-name>StatusServlet</servlet-name>
+    <servlet-class>status.StatusServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StatusServlet</servlet-name>
+    <url-pattern>/StatusServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

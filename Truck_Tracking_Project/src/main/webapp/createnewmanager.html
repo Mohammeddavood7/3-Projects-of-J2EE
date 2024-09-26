@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Services</title>
+    <link rel="stylesheet" href="newmanager.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="#">Recently Installed Trucks</a></li>
+                    <li><a href="#">Status</a></li>
+                    <li><a href="#">Towards Here</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="banner">
+                <h1>TRANSPORT COMPANY</h1>
+                <h2>We care about your cargo</h2>
+            </div>
+        </header>
+        <main>
+            <section class="welcome">
+                <h2>MOST CONVINIENT AND RELIABLE TRANSPORT SERVICES</h2>
+                <p>Click here for details</p>
+            </section>
+            <section class="login">
+                <h2>WELCOME TO OUR TRUCK TRACKING COMPANY</h2>
+                <form action="newmanager" method="post">
+                    <label for="branch">Select a Branch:</label>
+                    <select id="branch" name="branch">
+                        <option value="HYDERABAD">Hyderabad</option>
+                        <option value="KERALA">Kerala</option>
+                        <option value="CHENNAI">Chennai</option>
+                        <option value="BANGALORE">Bangalore</option>
+                        
+                    </select>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Password:</label>
+                    <input type="text" id="password" name="password" required>
+                    <label for="date_of_joining">Date of Joining:</label>
+                    <input type="date" id="doj" name="doj" required>
+                    <label for="date_of_birth">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                    <label for="salary">Salary:</label>
+                    <input type="text" id="salary" name="salary" required>
+                    <button type="submit">Login</button>
+                    <a class="admin-login" href="findmanager.html">check manager created or not</a>
+                </form>
+            </section>
+            <section class="featured-services">
+                <h3>Featured Services</h3>
+                <ul>
+                    <li><a href="#">Free Core Java Tutorial</a></li>
+                    <li><a href="#">JSP Tutorial</a></li>
+                    <li><a href="#">Free Android Tutorial</a></li>
+                    <li><a href="#">Struts and Hibernate Tutorial</a></li>
+                    <li><a href="#">More Project</a></li>
+                    <li><a href="#">C, C++ Tutorial</a></li>
+                    <li><a href="#">The Forum</a></li>
+                    <li><a href="#">HTML, SQL Tutorial</a></li>
+                </ul>
+            </section>
+            <section class="featured-events">
+                <h3>Featured Events</h3>
+                <ul>
+                    <li><a href="#">More Project</a></li>
+                    <li><a href="#">C, C++ Tutorial</a></li>
+                    <li><a href="#">The Forum</a></li>
+                    <li><a href="#">HTML, SQL Tutorial</a></li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <a class="details-link" href="#">Click here for details</a>
+        </footer>
+    </div>
+</body>
+</html>

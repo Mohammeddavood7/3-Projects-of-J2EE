@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APANA - ExtraOrdinary Service</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        /* Navigation bar styles */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* Services section styles */
+        .services {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .services a {
+            text-decoration: none;
+            color: #333;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Form section styles */
+        .form {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            width: 400px;
+            margin: auto;
+        }
+
+        .form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form input[type="text"],
+        .form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* About section styles */
+        .about {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+        }
+
+        .about h2 {
+            margin-bottom: 10px;
+        }
+
+        .about p {
+            line-height: 1.5;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="newaccount.html"><button>NEW ACCOUNT</button></a></li>
+                <li><a href="balance.html"><button>BALANCE</button></a></li>
+                <li><a href="deposit.html"><button>DEPOSIT</button></a></li>
+                <li><a href="withdraw.html"><button>WITHDRAW</button></a></li>
+                <li><a href="transfer.html"><button>TRANSFER</button></a></li>
+                <li><a href="closeac.html"><button>CLOSE A/C</button></a></li>
+                <li><a href="aboutus.html"><button>ABOUT US</button></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="services">
+            <a href="www.javatpoint.com">www.javatpoint.com</a>
+            <!-- Add more service links here -->
+        </section>
+        <section class="form">
+            <span id="unameError"></span>
+            <span id="pwordError"></span>
+            <span id="rwordError"></span>
+            <span id="matchError"></span>
+            <span id="amountError"></span>
+            <span id="addressError"></span>
+            <span id="phoneError"></span>
+            <form action="newaccount" method="post" id="frm" name="frm">
+                <table>
+                    <caption><strong> <i>OPEN ACCOUNT FORM</i></strong></caption>
+                    <tr>
+                        <th>USER NAME: </th>
+                        <td><input type="text" name="uname" id="uname" required></td>
+                    </tr>
+                    <tr>
+                        <th>PASSWORD: </th>
+                        <td><input type="text" name="pword" id="pword" required></td>
+                    </tr>
+                    <tr>
+                        <th>RE-PASSWORD: </th>
+                        <td><input type="text" name="rword" id="rword" required></td>
+                    </tr>
+                    <tr>
+                        <th>AMOUNT: </th>
+                        <td><input type="text" name="amount" id="amount" required></td>
+                    </tr>
+                    <tr>
+                        <th>ADDRESS: </th>
+                        <td><input type="text" name="address" id="address" required></td>
+                    </tr>
+                    <tr>
+                        <th>PHONE: </th>
+                        <td><input type="text" name="phone" id="phone"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="submit"> <input type="reset" name="Clear"></td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+        <section class="about">
+            <h2>Welcome</h2>
+            <p>Each person plans their site layout depending on their business type...</p>
+            <!-- Add more content about your business -->
+        </section>
+    </main>
+
+    <script type="text/javascript">
+        document.getElementById("frm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            validatingGetParameter();
+        });
+
+        function validatingGetParameter() {
+            let valid = true;
+
+            // Username validation
+            let uname = document.getElementById("uname");
+            const unameValid = /^[a-zA-Z ]+$/;
+            if (!unameValid.test(uname.value) || uname.value === "") {
+                document.getElementById("unameError").innerHTML = `<center><i>USERNAME MUST BE IN ALPHABETS</i></center>`;
+                valid = false;
+            } else {
+                document.getElementById("unameError").innerText = "";
+            }
+
+            // Password validation
+            let pword = document.getElementById("pword");
+            const password = /^\d{10}$/;
+            if (!password.test(pword.value) || pword.value === "" || pword.value === " ") {
+                document.getElementById("pwordError").innerHTML = `<center><i>PASSWORD SHOULD BE 10 DIGITS NUMBER</i></center>`;
+                valid = false;
+            } else {
+                document.getElementById("pwordError").innerText = "";
+            }
+
+            // Confirm Password validation
+            let rword = document.getElementById("rword");
+            if (!password.test(rword.value) || rword.value === "" || rword.value === " ") {
+                document.getElementById("rwordError").innerHTML = `<center><i>RE-PASSWORD SHOULD BE 10 DIGITS NUMBER</i></center>`;
+                valid = false;
+            } else {
+                document.getElementById("rwordError").innerText = "";
+            }
+
+            // Password match validation
+            if (pword.value !== rword.value) {
+                document.getElementById("matchError").innerHTML = `<center><i>PASSWORD AND RE-PASSWORD SHOULD MATCH</i></center>`;
+                valid = false;
+            } else {
+                document.getElementById("matchError").innerText = "";
+            }
+
+            // Amount validation
+            let amount1 = document.getElementById("amount");
+            let parsAmount = parseFloat(amount1.value);
+            
+            const amountV = /^\d+$/;
+            if (!amountV.test(amount1.value) || parsAmount <= 0) {
+                document.getElementById("amountError").innerHTML = `<center><i>AMOUNT SHOULD BE A POSITIVE NUMBER</i></center>`;
+                valid = false;
+            } else {
+                document.getElementById("amountError").innerText = "";
+            }
+
+            // Address validation
+            let address = document.getElementById("address");
+            const addressV = /^[a-zA-Z ]+$/;
+            if (!addressV.test(address.value) || address.value === "" || address.value === " ") {
+                document.getElementById("addressError").innerHTML = `<center><i>ADDRESS MUST BE IN ALPHABETS</i></center>`;
+                valid = false;
+            } else {
+                document.getElementById("addressError").innerText = "";
+            }
+
+            // Phone number validation
+            let phone = document.getElementById("phone");
+            const phno = /^[6-9]\d{9}$/;
+            if (!phno.test(phone.value) || phone.value === "" || phone.value === " ") {
+                document.getElementById("phoneError").innerHTML = `<center><i>INDIAN PHONE NUMBER MUST BE 10 DIGITS</i></center>`;
+                valid = false;
+            } else {
+                document.getElementById("phoneError").innerText = "";
+            }
+
+            if (valid) {
+                document.getElementById("frm").submit();
+            }
+        }
+    </script>
+</body>
+</html>z
